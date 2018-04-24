@@ -65,6 +65,8 @@ What Each Commands do
             - JS (ES6)
             - JS String methods
            
- Note: You Should get your own Spotify, twitter and OMDB key so that it can work in your pc. 
+
+
+Note: You Should get your own Spotify, twitter and OMDB key so that it can work in your pc. 
 
 I think this will be a good backend project that covers most node js topics
