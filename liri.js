@@ -20,38 +20,49 @@ let rawInput = process.argv.slice(3);
 // Adjusted Input
 let capitalizedInput = [];
 let input = "";
+let fsAppend = "";
 
 // Conditions for input variables
 
-    // If input is provided
+// If input is provided
+
+    // Spotify
     if (action === 'spotify-this-song' && rawInput.length > 0){
 
         // Capitalize the first letter
         for (let i in rawInput){
-            let x = rawInput[i].charAt(0).toUpperCase() + rawInput[i].slice(1)
-            console.log(x);
-            capitalizedInput.push(x)
-            console.log(capitalizedInput);
+            let x = rawInput[i].charAt(0).toUpperCase() + rawInput[i].slice(1);
+            capitalizedInput.push(x);
             input = capitalizedInput.join(" ");
         } // End of for loop
     }
 
+    // Movie imdb
     if (action === 'movie-this' && rawInput.length > 0){
         input =rawInput.join("+")
     }
 
-    // If input is not provided
+// If input is not provided
+
+    // Spotify
     if (action === 'spotify-this-song' && rawInput.length === 0){
-        console.log("i am here")
         input ="The Sign"
     }
 
+    // Movie imdb
     if (action === 'movie-this' && rawInput.length === 0){
         input ="mr+nobody"
     }
 
-// Invokes the the switch function
+    // fs write data
+    fsAppend = action + ", " + rawInput.join(" ");
+  
+
+// Invokes the switch function
 userInput (action, input);
+
+
+
 
 // =================================== Functions ==========================================================
 
@@ -89,18 +100,18 @@ function twitter(){
         // Error
         if(error) throw error;
 
-
-        const mappedTweets = tweets.filter((elem)=> {
+        const filteredTweets = tweets.filter((elem)=> {
             allTweets.push(elem.text);
         })
         
-        // output
+        // Output
         for (let i in allTweets){
             console.log(`Tweet ${+i + 1}: ${allTweets[i]}`)
         }
  
-      });
-}
+      });// End of Twitter 
+
+}// End of Twitter Function
 
 // Spotify Function
 function spotif(input){
@@ -113,11 +124,9 @@ function spotif(input){
         
         // Filtered Response
         const responseFiltered = data.tracks.items.filter((elem)=>{
-
             if (elem.name === input){
                 return elem
             }
-            // console.log(elem.name)
         });
         
         // Mapped Response
@@ -139,14 +148,17 @@ function spotif(input){
            
            // Final Api call output
            console.log(`\n
-            Song Name: ${track}\n 
-            Artist: ${artists}\n
-            Album: ${album}\n
-            Link: ${url}`)
-           })
-        
-      });
-};
+                Song Name: ${track}\n 
+                Artist: ${artists}\n
+                Album: ${album}\n
+                Link: ${url}`)
+
+           })// End of mapped Response
+
+      });// End of spotify API
+
+};// End of Spotfiy function
+
 
 // Movie Function
 function movie(input){
@@ -172,11 +184,17 @@ function movie(input){
                 \n Actors in the movie: ${reply.Actors}
                 `);
         }
-    });
-}
+
+    });// End of Movie API
+
+}// End of Movie Function
+
 
 // File System(fs) Function
+
 function doWhatISay(){
+
+    // Read File system (fs)
     fs.readFile("random.txt", "utf8", (error, data) =>{
         if (error){
             console.log(error);
@@ -186,5 +204,17 @@ function doWhatISay(){
         const argument = data.split(",");
 
         userInput (argument[0], argument[1])
-    })
-}
+    })// End of fs Read
+
+}// End of doWhatISay Function
+
+
+// Write File system (fs)
+
+fs.appendFile("log.txt", `, "${fsAppend}"`, (err)=> {
+    if (err) {
+        return console.log(err);
+      };
+
+      console.log("log.txt is successfully Updated!")
+})
