@@ -1,19 +1,21 @@
 # liri-node-app
 
-Language Interpretation and Recognition Interface app
 
-Project for Spotify, Twitter, Omdb Api's 
+### Overview
+A Node.js LIRI (Language Interpretation and Recognition Interface) app. It's a back end program in which users input on the editor command terminal to request information from spotify Web API, Twitter Web API and Omdp(movie) Web API.
 
--------------------------------------------------------------------------------------------------
+### How to use this app
+
+1. Download / clone to your desktop.
+2. Install the node module (npm init)
+3. you need your own spotify and twitter Api keys
+4. Create a .env file to set what are known as environment variables
+5 Then use the commands below to use the api prefered.
 
 
-Project built by JavaScript(ES6), API and npm.
 
-This project will help students or anyone new or familiar with the above listed programs. 
 
-It's a back end program in which users input on the editor command terminal.  
-
-Commands for each API 
+### Commands for each API 
 
     - For Spotify API node liri.js spotify-this-song '<song name here>'
     - For OMDBI Movies API "node liri.js movie-this" "movie name"
@@ -21,7 +23,7 @@ Commands for each API
     - Using the fs Node package, LIRI will take the text inside of random.txt and then use it to call one of LIRI's commands.
      
     
-What Each Commands do 
+### Functionality 
 
 1. node liri.js my-tweets
 
@@ -53,20 +55,11 @@ What Each Commands do
     
    Using the fs Node package, LIRI will take the text inside of random.txt and then use it to call one of LIRI's commands.
    It should run spotify-this-song for "I Want it That Way," as follows the text in random.txt.
-   Feel free to change the text in that document to test out the feature for other commands.
-   It is useful to understand or use as a reference the followings
-
-            - NPM 
-            - NPM API requests
-            - File System 
-              - fs Write
-              - fs Append
-            - dotenv - to set what are known as environment variables
-            - JS (ES6)
-            - JS String methods
-           
+   
+ ### Screenshots
+ 
+ 
+ 
+   
 
 
-Note: You Should get your own Spotify, twitter and OMDB key so that it can work in your pc. 
-
-I think this will be a good backend project that covers most node js topics
