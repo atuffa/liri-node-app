@@ -22,8 +22,6 @@ let capitalizedInput = [];
 let input = "";
 let fsAppend = "";
 
-
-console.log(action)
 // Conditions for input variables
 
 // If input is provided
@@ -117,7 +115,6 @@ function twitter(){
 
 // Spotify Function
 function spotif(input){
-    console.log("hey")
     // Spotify Api
     spotify.search({ type: 'track', query: input, limit: 20 }, function(err, data) {
         
@@ -203,8 +200,8 @@ function doWhatISay(){
             console.log(error);
         }
 
-        let argument = ""
-        argument = data.split(",");
+
+        const argument = data.split(",");
 
         userInput (argument[0], argument[1])
     })// End of fs Read
