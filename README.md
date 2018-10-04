@@ -57,7 +57,8 @@ A Node.js LIRI (Language Interpretation and Recognition Interface) app. It's a b
    It should run spotify-this-song for "I Want it That Way," as follows the text in random.txt.
    
  ### Screenshots
- 
+ - Desktop View
+  * ![Insert(posting)](/spotify-this-song.png)
  
  
    
