@@ -61,7 +61,7 @@ A Node.js LIRI (Language Interpretation and Recognition Interface) app. It's a b
   * ![Spotify](/spotify-this-song.png)
 
 - Omdp Api
-  * ![Omdp](/spotify-this-song.png)
+  * ![Omdp](/movie-this.png)
 
  
  
